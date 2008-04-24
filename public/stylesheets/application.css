@@ -1,0 +1,6 @@
+.card.hover { outline: 1px solid black; }
+
+.story.card .story-effort.editor { float:right; display: block; margin-top: 20px;}
+.story.card .story-owner.editor { margin-right:10px;}
+.story.card .users { clear: left; float: left; padding-top: 20px;}
+

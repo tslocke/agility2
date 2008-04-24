@@ -1,0 +1,26 @@
+<show-page primary-collection="stories" layout="aside">
+  <prepend-heading:><name:project/>: </prepend-heading:>
+  <creation-details: replace/>
+  <field-list: replace/>
+  <primary-collection-heading: replace/>
+
+  <primary-collection:>
+    <collection sortable sortable-options="&{ :constraint => false }">
+      <card:><delete-button: update="primary-collection-count"></delete-button:></card:>
+    </collection>
+  </primary-collection:>
+
+  <aside:>
+    <collection-preview:project.buckets part="buckets">
+      <card: class="#{'droppable' unless this == @bucket}"/>
+    </collection-preview>
+
+    <div class="assignments" part="assignments">
+      <h2>Assignments</h2>
+      <ul with="&User.all">
+        <li:><name/>: <repeat:assignments join=", "><a action="edit"/></repeat:></li:>
+      </ul>
+    </div>
+  </aside:>
+
+</show-page>

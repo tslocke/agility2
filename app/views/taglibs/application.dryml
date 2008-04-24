@@ -1,0 +1,38 @@
+<!-- Define your application-wide tags here -->
+
+<include src="rapid" plugin="hobo"/>
+
+<set-theme name="clean"/>
+
+<def tag="app-name">Agility2</def>
+
+
+<def tag="input" for="Effort">
+  <select-input options="&[1, 2, 4]" merge/>
+</def>
+
+<def tag="editor" for="Effort">
+  <integer-select-editor options="&[1, 2, 4]" merge/>
+</def>
+
+
+<def tag="card" for="Story">
+  <base-card merge>
+    <append-body:>
+      
+      <div class="users">
+        Owner: <editor:owner/>
+        Assigned to: <editor:assigned-to include-none update="assignments"/>
+      </div>
+      <editor:effort update="buckets"/>
+    </append-body:>
+  </base-card>
+</def>
+
+
+<def tag="card" for="Bucket">
+  <base-card merge>
+    <creation-details: replace/>
+    <append-body:><count:stories/>. Total effort: <view:total_effort/></append-body:>
+  </base-card>
+</def>
