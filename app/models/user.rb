@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   # def super_user?; true; end
 
   def creatable_by?(creator)
-    creator.administrator? || !administrator
+    creator.administrator?
   end
 
   def updatable_by?(updater, new)
