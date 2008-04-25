@@ -15,6 +15,8 @@
     </collection>
   </primary-collection:>
 
+  <add-new-form: update="primary-collection, primary-collection-count, buckets"/>
+
   <aside:>
     <collection-preview:project.buckets part="buckets">
       <card: class="#{'droppable' unless this == @bucket}"/>
