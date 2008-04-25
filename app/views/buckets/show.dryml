@@ -18,15 +18,17 @@
   <add-new-form: update="primary-collection, primary-collection-count, buckets"/>
 
   <aside:>
-    <collection-preview:project.buckets part="buckets">
-      <card: class="#{'droppable' unless this == @bucket}"/>
-    </collection-preview>
+    <div style="position:fixed">
+      <collection-preview:project.buckets part="buckets">
+        <card: class="#{'droppable' unless this == @bucket}"/>
+      </collection-preview>
 
-    <div class="assignments" part="assignments">
-      <h2>Assignments</h2>
-      <ul with="&User.all">
-        <li:><name/>: <repeat:assignments join=", "><a action="edit"/></repeat:></li:>
-      </ul>
+      <div class="assignments" part="assignments">
+        <h2>Assignments</h2>
+        <ul with="&User.all">
+          <li:><name/>: <repeat:assignments join=", "><a action="edit"/></repeat:></li:>
+        </ul>
+      </div>
     </div>
   </aside:>
 
