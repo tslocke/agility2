@@ -20,6 +20,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 
+em { font-style: italic; }
+strong { font-weight: bold; }
+
 /* Remember to define focus styles! */
 :focus {
 	outline: 0;

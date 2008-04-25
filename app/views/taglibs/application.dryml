@@ -8,13 +8,17 @@
 
 
 <def tag="input" for="Effort">
-  <select-input options="&[1, 2, 4]" merge/>
+  <select-input options="&['?', 1, 2, 4]" merge/>
 </def>
 
 <def tag="editor" for="Effort">
-  <integer-select-editor options="&[1, 2, 4]" merge/>
+  <integer-select-editor options="&['?', 1, 2, 4]" merge/>
 </def>
 
+
+<def tag="card" for="Project">
+  <base-card><count: replace/></base-card>
+</def>
 
 <def tag="card" for="Story">
   <base-card merge>

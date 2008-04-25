@@ -1,6 +1,11 @@
 <show-page primary-collection="stories" layout="aside">
   <prepend-heading:><name:project/>: </prepend-heading:>
-  <creation-details: replace/>
+  <creation-details: replace>
+    <div class="filter">
+      Filter by owner: <filter-menu param-name="owner" options="&User.all"/>
+    </div>
+  </creation-details:>
+
   <field-list: replace/>
   <primary-collection-heading: replace/>
 
