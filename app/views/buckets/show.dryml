@@ -18,7 +18,7 @@
   <add-new-form: update="primary-collection, primary-collection-count, buckets"/>
 
   <aside:>
-    <div style="position:fixed">
+    <div class="aside-info">
       <collection-preview:project.buckets part="buckets">
         <card: class="#{'droppable' unless this == @bucket}"/>
       </collection-preview>

@@ -8,3 +8,5 @@
 
 body.show-page.bucket .filter { float: right; }
 body.show-page.bucket .filter form { display: inline; }
+
+.aside-info { position:fixed; width: 220px; }
