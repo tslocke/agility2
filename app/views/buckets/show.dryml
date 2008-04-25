@@ -10,7 +10,7 @@
   <primary-collection-heading: replace/>
 
   <primary-collection:>
-    <collection sortable sortable-options="&{ :constraint => false }">
+    <collection sortable sortable-options="&{ :constraint => false }" part="primary-collection">
       <card:><delete-button: update="primary-collection-count"></delete-button:></card:>
     </collection>
   </primary-collection:>
