@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  hobo_model # Don't put anything above this
+  hobo_model
 
   fields do
     name :string
@@ -9,23 +9,31 @@ class Project < ActiveRecord::Base
   
   has_many :buckets, :order => :position, :dependent => :destroy
 
+  
+  after_create :create_default_buckets
+  
+  def create_default_buckets
+    %w(Done Now Next Backlog).each do |name|
+      buckets.create :name => name
+    end
+  end
 
   # --- Hobo Permissions --- #
 
   def creatable_by?(user)
-    user.administrator?
+    !user.guest?
   end
 
   def updatable_by?(user, new)
-    user.administrator?
+    !user.guest?
   end
 
   def deletable_by?(user)
-    user.administrator?
+    !user.guest?
   end
 
   def viewable_by?(user, field)
-    true
+    !user.guest?
   end
 
 end

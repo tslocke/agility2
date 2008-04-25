@@ -3,12 +3,14 @@ class Bucket < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    name :string, :unique
+    name :string
     timestamps
   end
   
   belongs_to :project
   has_many :stories, :order => :position
+  
+  validates_uniqueness_of :name, :scope => :project_id
   
   acts_as_list :scope => :project
   
@@ -20,19 +22,19 @@ class Bucket < ActiveRecord::Base
   # --- Hobo Permissions --- #
 
   def creatable_by?(user)
-    user.administrator?
+    !user.guest? && position.nil?
   end
 
   def updatable_by?(user, new)
-    user.administrator?
+    !user.guest?
   end
 
   def deletable_by?(user)
-    user.administrator?
+    !user.guest?
   end
 
   def viewable_by?(user, field)
-    true
+    !user.guest?
   end
 
 end
