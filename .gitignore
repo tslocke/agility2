@@ -1,4 +1,5 @@
 log/*
 tmp/*
+!*/.gitignore
 db/*.sqlite3
 
