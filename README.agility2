@@ -1,0 +1,9 @@
+Welcome to Agility2.
+
+To get started with Hobo and Agility2, assuming you are using a git clone, run:
+
+	git submodule init; git submodule update
+	./vendor/hobo/scripts/symlink_plugins
+
+That will setup and pull the right commit of the hobo application into vendor/hobo
+and then setup symbolic links to the vendor/plugins directory.
